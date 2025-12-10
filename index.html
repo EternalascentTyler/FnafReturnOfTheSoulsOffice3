@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Office</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body id="bod">
+    <!-- AUDIO FILES -->
+    <audio id="keypadSound" src="sounds/keypad.mp4"></audio>
+    <audio id="ventSound" src="sounds/vents.mp4"></audio>
+    <audio id="correctSound" src="sounds/correct.mp4"></audio>
+    <audio id="wrongSound" src="sounds/wrong.mp4"></audio>
+    <audio id="bgMusic" src="sounds/bgmusic.mp4" loop></audio>
+    <audio id="jumpscareSound" src="sounds/fahh.mp3"></audio>
+
+    <!-- MUTE BUTTON -->
+    <button
+      id="muteBtn"
+      style="position: fixed; top: 10px; right: 10px; z-index: 1000"
+    >
+      Mute
+    </button>
+
+    <!-- PAGE CONTENT -->
+    <div class="left">
+      <div class="door-backdrop">
+        <div class="transparent-images img center-content door"></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="row">
+        <div class="gif-images"><img src="" /></div>
+
+        <!-- KEYPAD IMAGE -->
+        <div class="gif-images center-content container top-div">
+          <img
+            src="Fnaf/keypadF.png"
+            alt="Click me"
+            class="shrink"
+            onclick="playKeypadSound(); openModal('myModal')"
+          />
+        </div>
+
+        <div class="gif-images center-content container top-div">
+          <img
+            src="Fnaf/clipboard.png"
+            alt="Info"
+            class="shrink"
+            onclick="openModal('infoModal')"
+          />
+        </div>
+      </div>
+
+      <div class="sow">
+        <div
+          class="mow center-content textthingy"
+          onclick="openModal('drawer1Modal')"
+        >
+          <img src="" />
+          <p>Open Drawer 1</p>
+        </div>
+        <div
+          class="mow center-content textthingy"
+          onclick="openModal('drawer2Modal')"
+        >
+          <img src="" />
+          <p>Open Drawer 2</p>
+        </div>
+        <div
+          class="mow center-content textthingy"
+          onclick="openModal('drawer3Modal')"
+        >
+          <img src="" />
+          <p>Open Drawer 3</p>
+        </div>
+        <img src="" />
+      </div>
+
+      <div class="row">
+        <div class="gif-images"><img src="" /></div>
+        <div class="gif-images"><img src="" /></div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="row">
+        <div class="gif-images"><img src="" /></div>
+        <div class="gif-images"><img src="" /></div>
+      </div>
+
+      <div class="row thingy bottom-div"></div>
+
+      <div class="row">
+        <div class="gif-images top-div container yepy">
+          <img src="Fnaf/ventcover_1_33.jpg" alt="Click me too" />
+        </div>
+      </div>
+    </div>
+
+    <div class="left light-grey">
+      <div class="door-backdrop">
+        <div class="transparent-images jpg door">
+          <img src="" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Keypad Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div
+          id="keypadHeader"
+          style="margin-bottom: 10px; color: white; font-size: 24px"
+        ></div>
+        <div
+          class="xob blue"
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div id="display" class="display"></div>
+          <div class="keys">
+            <button onclick="playKeypadSound(); pressKey('1')">1</button>
+            <button onclick="playKeypadSound(); pressKey('2')">2</button>
+            <button onclick="playKeypadSound(); pressKey('3')">3</button>
+            <button onclick="playKeypadSound(); pressKey('4')">4</button>
+            <button onclick="playKeypadSound(); pressKey('5')">5</button>
+            <button onclick="playKeypadSound(); pressKey('6')">6</button>
+            <button onclick="playKeypadSound(); pressKey('7')">7</button>
+            <button onclick="playKeypadSound(); pressKey('8')">8</button>
+            <button onclick="playKeypadSound(); pressKey('9')">9</button>
+            <button onclick="playKeypadSound(); clearDisplay()">C</button>
+            <button onclick="playKeypadSound(); pressKey('0')">0</button>
+            <button onclick="playKeypadSound(); checkCode()">Enter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vent Modal -->
+    <div id="myModal2" class="modal">
+      <div class="modal-content">
+        <div
+          style="
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px black;
+          "
+        >
+          Enter the vents?
+        </div>
+        <div class="xobvent red" style="display: flex; justify-content: center">
+          <img
+            src="Fnaf/ventF.png"
+            class="shrink"
+            style="width: 100%; height: auto; cursor: pointer"
+            onclick="ventgoogoo()"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Drawer Modals -->
+    <div id="drawer1Modal" class="modal">
+      <div class="modal-content">
+        <h2>Drawer 1</h2>
+        <p>909</p>
+      </div>
+    </div>
+
+    <div id="drawer2Modal" class="modal">
+      <div class="modal-content">
+        <h2>Drawer 2</h2>
+        <p>531</p>
+      </div>
+    </div>
+
+    <div id="drawer3Modal" class="modal">
+      <div class="modal-content">
+        <h2>Drawer 3</h2>
+        <p>14</p>
+      </div>
+    </div>
+
+    <!-- ⭐ NEW INFO MODAL -->
+    <div id="infoModal" class="modal">
+      <div class="modal-content">
+        <h2>Employee Log</h2>
+        <p>
+          Last week's inspection order was noted as unusual:<br />
+          • Drawer 3 required the first review<br />
+          • Drawer 1 followed after documentation sorting<br />
+          • Drawer 2 was cleared last during closing<br /><br />
+          Staff are advised to follow the same procedure.
+        </p>
+      </div>
+    </div>
+
+    <!-- RANDOM POPUP IMAGE -->
+    <img
+      id="randomPopup"
+      src="Fnaf/Foxy.gif"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        display: none;
+        z-index: 2000;
+        pointer-events: none;
+      "
+    />
+    <!-- JUMPSCARE LOSS MODAL -->
+    <div id="lossModal" class="modal">
+      <div class="modal-content">
+        <h1 style="color: red; text-shadow: 0 0 10px red">YOU LOST</h1>
+        <p>foxy got you</p>
+        <button
+          onclick="window.location.reload();"
+          style="
+            padding: 10px 20px;
+            font-size: 20px;
+            border-radius: 8px;
+            border: none;
+            background: red;
+            color: white;
+            cursor: pointer;
+          "
+        >
+          Restart
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
