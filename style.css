@@ -1,0 +1,343 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  background-image: url("Fnaf/fnaf11.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* rules for building the layout */
+.left {
+  height: 100%;
+  width: 30%;
+}
+.right {
+  height: 100%;
+  width: 70%;
+}
+.row {
+  height: 33.33%;
+  width: 100%;
+  display: flex;
+}
+.sow {
+  height: 33.33%;
+  width: 100%;
+  display: block;
+}
+.mow {
+  height: 33.33%;
+  width: 100%;
+  display: flex;
+}
+.gif-images {
+  height: 100%;
+  width: 50%;
+}
+.transparent-images {
+  height: 100%;
+  width: 100%;
+}
+/* rules for controlling content */
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.center-content-bottom {
+  justify-content: center;
+  align-items: flex-end;
+  display: flex;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  background-image: url("Fnaf/fnaf22.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.jpg {
+  width: 100%;
+  height: 100%;
+  background-image: url("Fnaf/fnaf33.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.translucent {
+  opacity: 0.3;
+}
+.click-me:hover {
+  cursor: pointer;
+}
+
+.thingy {
+  position: relative;
+  overflow: visible;
+  z-index: 1;
+}
+
+.thingy img {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+  opacity: 1;
+  z-index: 2;
+}
+
+.yepy {
+  position: relative;
+  overflow: visible; /* Allow the image to spill out */
+}
+
+.yepy img {
+  position: absolute;
+  top: 20px;
+  left: -200px;
+  height: 90%;
+  width: 100%;
+  opacity: 1;
+  z-index: 2; /* Ensure it appears above other divs */
+}
+
+.cube {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.top-div {
+  position: relative;
+  overflow: visible; /* allow image bleed */
+  z-index: 2; /* higher layer */
+}
+
+.bottom-div {
+  position: relative;
+  z-index: 1; /* lower layer */
+}
+
+/* colors */
+.red {
+  background-color: #ca1b22;
+}
+.green {
+  background-color: #008d24;
+}
+.blue {
+  background-color: #0b69c0;
+}
+.purple {
+  background-color: #3a246d;
+}
+.orange {
+  background-color: #ea6626;
+}
+.black {
+  background-color: #1b1b1b;
+}
+.white {
+  background-color: #ffffff;
+}
+.light-grey {
+  background-color: #a9a9a9;
+}
+.dark-grey {
+  background-color: #707070;
+}
+.slate {
+  background-color: #2f4f4f;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background so text is visible */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Add hover for drawer rows */
+.mow:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+
+.xob {
+  width: 300px;
+  height: 400px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  object-fit: contain;
+}
+.xobvent {
+  width: 1000px;
+  height: 600px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.shrink {
+  max-width: 100%;
+  max-height: 100%;
+  width: 50%;
+  height: 100%;
+}
+
+.display {
+  width: 90%;
+  height: 50px;
+  background: black;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 24px;
+  text-align: right;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: inset 0 0 10px #000;
+}
+
+.keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  width: 80%;
+}
+
+.keys button {
+  background-color: #c13a1a;
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #000;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.keys button:hover {
+  background-color: #e24b20;
+  transform: scale(1.05);
+}
+
+.keys button:active {
+  background-color: #a32d10;
+}
+
+/* ===== DOOR ANIMATION ===== */
+.door {
+  transition: transform 1.2s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+
+.door.open {
+  transform: translateY(-100%);
+}
+
+/* EMPTY backdrop behind the doors */
+.door-backdrop {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== DOOR CONTROL BUTTONS ===== */
+.doorBtn {
+  position: fixed;
+  top: 15px;
+  padding: 10px 15px;
+  background-color: #444;
+  color: white;
+  border: 2px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  z-index: 2000;
+  transition: 0.2s;
+}
+.textthingy p {
+  color: wheat;
+  text-shadow: 0 0 5px wheat, 0 0 10px wheat, 0 0 20px wheat, 0 0 40px #d4b98a,
+    0 0 80px #d4b98a;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.textthingy p:hover {
+  color: #fffacd; /* slightly brighter color on hover */
+  text-shadow: 0 0 10px #fffacd, 0 0 20px #fffacd, 0 0 30px #ffd700,
+    0 0 50px #ffd700, 0 0 80px #ffd700;
+  transform: scale(1.1);
+}
+/* ===== INVENTORY ===== */
+.inventory-panel {
+  position: fixed;
+  bottom: -150px; /* hide below screen */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 1500;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.inventory-panel.show {
+  bottom: 10px; /* slide up */
+}
+
+.inventory-item {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.inventory-item:hover {
+  transform: scale(1.1);
+}
